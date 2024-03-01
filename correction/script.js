@@ -23,21 +23,6 @@ function getCurrentWeatherByCity(URL){
 	})
 }
 
-
-function getCurrentWeather(){
-	window.fetch('https://api.openweathermap.org/data/2.5/weather?q=Bordeaux&lang=fr&units=metric&mode=JSON&appid=<APIKEY') // Modifier l'APIKey
-	.then(function(res){
- 			if (res.ok) {
- 				return res.json();
- 			}
- 		})
- 		.then(function(res){
- 			// console.log(res);
- 			screenCurrentWeather(res);
- 		})
- 		.catch(function(err){console.log("oh no...")});
-}
-
 function screenCurrentWeather(weather){
 	console.log("ville : "+weather.name);
 	document.getElementById("temperature")
